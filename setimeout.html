@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>change colour of string</title>
+<script type="text/javascript">
+function change(f1)
+{
+	setTimeout(function(){var col_arr=new Array("red","blue","yellow","green");var element=document.getElementById("Str");var i=Math.floor(Math.random()*4);element.style.color=col_arr[i];},1000)
+}
+</script>
+</head>
+<body>
+<form>
+<input type="text" id="Str" value=""> Enter String<br><br>
+<input type="button" value="CLICK" onclick="change(this.form)">
+</form>
+</body>
+</html>
