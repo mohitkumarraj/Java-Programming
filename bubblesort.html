@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Bubble Sort</title>
+<script type="text/javascript">
+var arr=new Array();
+function enter_array(f1)
+{
+	var n=f1.size.value;
+	for(var i=0;i<n;i++)
+		arr[i]=prompt("enter the no","");
+}
+function bubble_sort(f1)
+{
+	
+	if(f1.size.value=="")
+		alert("plz enter the array");
+	else
+	{
+		var n=f1.size.value,temp,r="";
+		for(var i=1;i<n;i++)
+		{
+			for(var j=0;j<n;j++)
+			{
+				if(arr[j]>arr[j+1])
+				{
+					temp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp;
+				}
+			}
+		}
+		for(i=0;i<n;i++)
+			r=r+arr[i]+" ";
+		f1.sort.value=r;
+			
+	}
+}
+</script>
+</head>
+<body>
+<center>
+<form>
+<input type="text" name="size" value="" onchange="enter_array(this.form)">   ENTER NO<br><br>
+<input type="text" name="sort" value="" onfocus="bubble_sort(this.form)">   SORTED ARRAY<br><br>
+</form>
+</center>
+</body>
+</html>

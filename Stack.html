@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Stack</title>
+<script type="text/javascript">
+var stack=new Array(),r="",top=-1;
+function show_arr(f1)
+{
+	for(var i=0;i<=top;i++)
+		r=r+stack[i]+" ";
+	f1.arr.value=r;
+	r="";	
+}
+function push_el(f1)
+{
+	if(f1.PushE.value!="")
+	{
+		top++;
+		stack[top]=f1.PushE.value;
+		show_arr(f1);
+	}
+	else
+		alert("plz enter element to push on stack");
+}
+function pop_el(f1)
+{
+	var popd;
+	if(top>-1)
+	{
+		popd=stack[top];
+		top--;
+		f1.Pop_E.value=popd;
+		show_arr(f1);
+	}
+	else
+		alert("array is empty");
+}
+</script>
+</head>
+<body>
+<center>
+<form>
+<input type="text" name="PushE" value=""> Element Push<br><br>
+<input type="button" name="push" value="PUSH" onclick="push_el(this.form)"><br><br>
+<input type="button" name="pop" value="POP" onclick="pop_el(this.form)"><br><br>
+<input type="text" name="Pop_E" value=""> Popped Element<br><br>
+<input type="textarea" name="arr" value="">STACK
+</form>
+</center>
+</body>
+</html>
